@@ -1,0 +1,47 @@
+# Django-specific #
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+
+# If you are using SQLite3 locally #
+*.sqlite3
+
+# Python #
+*.py[cod]
+*$py.class
+
+# Environments #
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs and editors #
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS #
+.DS_Store
+
+# PyCharm #
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Byte-compiled / optimized / DLL files #
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions #
+*.

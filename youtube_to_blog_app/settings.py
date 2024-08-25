@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,8 +77,14 @@ WSGI_APPLICATION = "youtube_to_blog_app.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("DB_NAME"),  # RDS 데이터베이스 이름
+        "USER": config("DB_USER"),  # RDS 마스터 사용자 이름
+        "PASSWORD": config("DB_PASSWORD"),  # RDS 마스터 사용자 비밀번호
+        "HOST": config(
+            "DB_HOST"
+        ),  # RDS 엔드포인트 (예: your-db-instance.cabcdefghijk.us-west-2.rds.amazonaws.com)
+        "PORT": config("DB_PORT", default="5432"),  # 포트 (PostgreSQL 기본 포트: 5432)
     }
 }
 
